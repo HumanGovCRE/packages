@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0d1117;
+  --foreground: #e6edf3;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.verified-glow {
+  box-shadow: 0 0 20px rgba(35, 134, 54, 0.4);
+}
+
+.orb-glow {
+  box-shadow: 0 0 30px rgba(56, 139, 253, 0.4);
+}
