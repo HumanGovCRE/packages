@@ -1,0 +1,32 @@
+{
+  "name": "humangov",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "cre-workflow",
+    "frontend",
+    "scripts"
+  ],
+  "scripts": {
+    "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network sepolia",
+    "deploy:base": "npx hardhat run scripts/deploy.ts --network baseSepolia",
+    "test:all": "npx hardhat test && cd cre-workflow && bun test",
+    "check-env": "npx ts-node scripts/check-env.ts",
+    "demo:setup": "npx ts-node scripts/demo-setup.ts",
+    "bootstrap": "npm install && npx hardhat compile && cd cre-workflow && bun install && cd ../frontend && npm install",
+    "cre:simulate:verify": "cd cre-workflow && bun run simulate:verify",
+    "cre:simulate:expiry": "cd cre-workflow && bun run simulate:expiry"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts-ccip": "^1.6.4",
+    "@openzeppelin/contracts": "^5.4.0"
+  }
+}

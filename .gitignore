@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+cache/
+typechain-types/
+dist/
+.env
+.next/
+deployments/addresses.json
+frontend/.env.local
+cre-workflow/.env
+cre-workflow/secrets.yaml
