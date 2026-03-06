@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "copilot/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-contracts:
+    name: Test Smart Contracts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install root dependencies
+        run: npm install
+      - name: Compile contracts
+        run: npx hardhat compile
+      - name: Run contract tests
+        run: npx hardhat test
+
+  test-cre-workflow:
+    name: Test CRE Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install CRE workflow dependencies
+        run: cd cre-workflow && npm install
+      - name: Run CRE workflow tests
+        run: cd cre-workflow && npm test
+
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install frontend dependencies
+        run: cd frontend && npm install
+      - name: Build frontend
+        run: cd frontend && npm run build
