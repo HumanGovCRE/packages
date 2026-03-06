@@ -1,0 +1,14 @@
+{
+  "worldIdAppId": "app_staging_humangov",
+  "verificationAction": "verify-human",
+  "worldIdVerifyBaseUrl": "https://developer.worldcoin.org/api/v2/verify",
+  "enforceSignalToMatchWallet": true,
+  "minimumVerificationLevel": "orb",
+  "destinationChainSelector": "10344971235874465080",
+  "evm": {
+    "sourceChainName": "ethereum-testnet-sepolia",
+    "registryAddress": "0x0000000000000000000000000000000000000001",
+    "receiverAddress": "0x0000000000000000000000000000000000000002",
+    "receiverGasLimit": "900000"
+  }
+}

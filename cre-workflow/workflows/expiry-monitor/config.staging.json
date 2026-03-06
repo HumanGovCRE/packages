@@ -1,0 +1,13 @@
+{
+  "schedule": "0 0 */6 * * *",
+  "warningWindowSeconds": 604800,
+  "lookbackBlocks": 250000,
+  "autoRevokeExpired": true,
+  "maxRevocationsPerRun": 100,
+  "evm": {
+    "sourceChainName": "ethereum-testnet-sepolia",
+    "registryAddress": "0x0000000000000000000000000000000000000000",
+    "receiverAddress": "0x0000000000000000000000000000000000000000",
+    "receiverGasLimit": "900000"
+  }
+}

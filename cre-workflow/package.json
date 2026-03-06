@@ -1,0 +1,22 @@
+{
+  "name": "@humangov/cre-workflow",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "bun x cre-setup",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "simulate:verify": "cre workflow simulate workflows/verify-human --target local-simulation --trigger-index 0 --non-interactive --http-payload @workflows/verify-human/payloads/verify.request.json",
+    "simulate:expiry": "cre workflow simulate workflows/expiry-monitor --target local-simulation --trigger-index 0 --non-interactive"
+  },
+  "dependencies": {
+    "@chainlink/cre-sdk": "^1.1.2",
+    "viem": "2.34.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.21",
+    "typescript": "5.9.2"
+  }
+}

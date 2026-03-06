@@ -1,0 +1,27 @@
+# ============================================================================
+# HumanGov verify-human workflow settings
+# ============================================================================
+
+local-simulation:
+  user-workflow:
+    workflow-name: "humangov-verify-human-local"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.local-simulation.json"
+    secrets-path: "../../secrets.yaml"
+
+staging-settings:
+  user-workflow:
+    workflow-name: "humangov-verify-human-staging"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.json"
+    secrets-path: "../../secrets.yaml"
+
+production-settings:
+  user-workflow:
+    workflow-name: "humangov-verify-human-production"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.production.json"
+    secrets-path: "../../secrets.yaml"

@@ -1,0 +1,33 @@
+# ============================================================================
+# HumanGov CRE project settings
+# ============================================================================
+# Targets define RPCs and deployment defaults for CRE CLI commands.
+
+local-simulation:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia-rpc.publicnode.com
+
+staging-settings:
+  cre-cli:
+    don-family: "zone-a"
+  account:
+    workflow-owner-address: "(optional) 0x..."
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia-rpc.publicnode.com
+
+production-settings:
+  cre-cli:
+    don-family: "zone-a"
+  account:
+    workflow-owner-address: "(optional) 0x..."
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
+    - chain-name: ethereum-testnet-sepolia-base-1
+      url: https://base-sepolia-rpc.publicnode.com
