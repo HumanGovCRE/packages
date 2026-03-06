@@ -24,17 +24,19 @@ jobs:
         run: npx hardhat test
 
   test-cre-workflow:
-    name: Test CRE Workflow
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Install CRE workflow dependencies
-        run: cd cre-workflow && npm install
-      - name: Run CRE workflow tests
-        run: cd cre-workflow && npm test
+      name: Test CRE Workflow
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+            node-version: "22"
+        - name: Install Bun
+          run: curl -fsSL https://bun.sh/install | bash
+        - name: Install CRE workflow dependencies
+          run: cd cre-workflow && npm install
+        - name: Run CRE workflow tests
+          run: cd cre-workflow && npm test
 
   build-frontend:
     name: Build Frontend
